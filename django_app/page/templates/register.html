@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+        {# Load the tag library #}
+        {% load bootstrap5 %}
+
+        {# Load CSS and JavaScript #}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+    
+        {# Display django.contrib.messages as Bootstrap alerts #}
+        {% bootstrap_messages %}
+</head>
+
+<body>
+    <center>
+        <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><a href="/forms">The Secret</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Register</li>
+            </ol>
+          </nav>
+        <h1>Create Your Account</h1>
+        <form action="regist/" method="POST">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username</td>
+                    <td><input type="text" name="username" required></td>
+                </tr>
+                <tr>
+                    <td>Password</td>
+                    <td><input type="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <td>Re-Password</td>
+                    <td><input type="password" name="re_password" required></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <td>Lastname</td>
+                    <td><input type="text" name="lastname" required></td>
+                </tr>
+            </table>
+            <input type="submit" value="Regist">
+            <button><a href="/forms" style="text-decoration: none; color: black">back</a></button>
+        </form>
+            
+
+    </center>
+
+</body>
+
+</html>

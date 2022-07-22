@@ -1,0 +1,492 @@
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{# Display django.contrib.messages as Bootstrap alerts #}
+{% bootstrap_messages %}
+<style>
+  #head {
+    width: 100%;
+  }
+
+  body {
+    background-color: rgb(18, 10, 10);
+  }
+
+  #navbar {
+    overflow: hidden;
+    position: fixed;
+    background-color: black;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+  }
+
+  td {
+    border-radius: 10px;
+
+  }
+</style>
+
+<body>
+  <!-- Navbar -->
+  <ul class="nav nav-pills nav-fill" style="padding: 1%;" id="navbar">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#charactor">CHARACTOR</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#mecha">MECHA</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/forms">FORMs</a>
+    </li>
+  </ul>
+
+  <!-- Title -->
+  <table style="width: 100%; margin-top: 100px">
+    <tr>
+      <td style="width: 25%">
+
+      </td>
+      <td style="width: 50%">
+        <div id="head">
+          {% load static %}
+          <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{% static 'all.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'king.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'musscle.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="{% static 'hunter.jpg' %}" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+              data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </td>
+      <td style="width: 25%">
+
+      </td>
+    </tr>
+  </table><br>
+  <center>
+    <h1 style="color: white;">HYAKUJU SENTAI GAORANGER</h1><br>
+    <h2 id="charactor" style="color: white;">CHARACTOR</h2><br>
+  </center>
+
+
+  <!-- Card-Charactor -->
+  <center>
+    <table style="margin-bottom: 1%;">
+      <tr>
+        <td>
+          <div class="card" style="width: 15rem; margin: 2px;">
+            <!-- Red -->
+            <img src="{% static 'red.jpg' %}" class="card-img-top" alt="gaored">
+            <div class="card-body">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#gaored">GaoRed</a>
+              <br><br>
+              <ul>
+                <li>Gao Lion</li>
+                <li>Gao Gorilla</li>
+                <li>Gao Kong</li>
+                <li>Gao Icarus</li>
+              </ul>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="card" style="width: 15rem; margin: 2px">
+            <!-- Silveer -->
+            <img src="{% static 'silver.jpg' %}" class="card-img-top" alt="gaosilver">
+            <div class="card-body">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#gaosilver">GaoSilver</a>
+              <br><br>
+              <ul>
+                <li>Gao Wolf</li>
+                <li>Gao Ligator</li>
+                <li>Gao Hammerhead</li>
+              </ul>
+              <br>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="card" style="width: 15rem; margin: 2px">
+            <!-- Yellow -->
+            <img src="{% static 'yellow.jpg' %}" class="card-img-top" alt="gaoyellow">
+            <div class="card-body">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#gaoyellow">GaoYellow</a>
+              <br><br>
+              <ul>
+                <li>Gao Egle</li>
+                <li>Gao Polar</li>
+                <li>Gao Bear</li>
+              </ul>
+              <br>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="card" style="width: 15rem; margin: 2px">
+            <!-- Blue -->
+            <img src="{% static 'blue.jpg' %}" class="card-img-top" alt="gaoblue">
+            <div class="card-body">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#gaoblue">GaoBlue</a>
+              <br><br>
+              <ul>
+                <li>Gao Shark</li>
+                <li>Gao Giraffe</li>
+              </ul>
+              <br><br>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="card" style="width: 15rem; margin: 2px">
+            <!-- Black -->
+            <img src="{% static 'black.jpg' %}" class="card-img-top" alt="gaoblack">
+            <div class="card-body">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#gaoblack">GaoBlack</a>
+              <br><br>
+              <ul>
+                <li>Gao Bison</li>
+                <li>Gao Rhinos</li>
+                <li>Gao Majiro</li>
+              </ul>
+              <br>
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="card" style="width: 15rem; margin: 2px">
+            <!-- White -->
+            <img src="{% static 'white.jpg' %}" class="card-img-top" alt="gaowhite">
+            <div class="card-body">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#gaowhite">GaoWhite</a>
+              <br><br>
+              <ul>
+                <li>Gao Tiger</li>
+                <li>Gao Elephant</li>
+                <li>Gao Deers</li>
+              </ul>
+              <br>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <center>
+    <h1 id="mecha" style="color: white;">HYAKUJU GATTAI</h1><br>
+    <h2 style="color: white;">GaoKing</h2><br>
+  </center>
+
+  <!-- Mecha -->
+  <!-- Gaoking -->
+  <center>
+    <table style="width: 80%; padding: 1%; margin-bottom: 5%; color: white">
+      <tr>
+        <td rowspan="2" style="width: 50%;">
+          <center><img src="{% static 'king-1.jpg' %}" alt="gaoking" style="max-width: 80%;"></center>
+        </td>
+        <td>
+          <center><img src="{% static 'king-2.jpg' %}" alt="gaoking" style="max-width: 60%;">
+            <br>
+            <h4>Power animals</h4>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <center><img src="{% static 'king-3.jpg' %}" alt="gaoking" style="max-width: 60%;">
+            <br>
+            <h4>Gattai !!!</h4>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <!-- GaoMusscle -->
+  <center>
+    <h2 style="color: white;">GaoMusscle</h2><br>
+    <table style="width: 80%; padding: 1%; margin-bottom: 5%; color: white">
+      <tr>
+        <td rowspan="2" style="width: 50%;">
+          <center><img src="{% static 'musscle-1.jpg' %}" alt="gaomusscle" style="max-width: 80%;"></center>
+        </td>
+        <td>
+          <center><img src="{% static 'musscle-2.jpg' %}" alt="gaomusscle" style="max-width: 60%;">
+            <br>
+            <h4>Power animals</h4>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <center><img src="{% static 'musscle-3.jpg' %}" alt="gaomusscle" style="max-width: 60%;">
+            <br>
+            <h4>GaoMusscle Striker!!</h4>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+  <!-- GaoHunter -->
+  <center>
+    <h2 style="color: white;">GaoHunter Justice</h2><br>
+    <table style="width: 80%; padding: 1%; margin-bottom: 5%; color: white">
+      <tr>
+        <td rowspan="2" style="width: 50%;">
+          <center><img src="{% static 'hunter-1.jpg' %}" alt="gaohunter" style="max-width: 80%;"></center>
+        </td>
+        <td>
+          <center><img src="{% static 'hunter-2.jpg' %}" alt="gaohunter" style="max-width: 60%;">
+            <br>
+            <h4>Power animals</h4>
+          </center>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <center><img src="{% static 'hunter-3.jpg' %}" alt="gaohunter" style="max-width: 60%;">
+            <br>
+            <h4>GaoHunter Evil !!</h4>
+          </center>
+        </td>
+      </tr>
+    </table>
+  </center>
+
+
+
+
+
+
+
+
+  <!-- Modal-Charactor Info -->
+  <!-- Red -->
+  <div class="modal fade" id="gaored" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gao Red</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td style="width: 50%;" rowspan="2">
+                <img src="{% static 'red-2.jpg' %}" alt="gao red" style="max-width: 60%;">
+              </td>
+              <td style="width: 50%;">
+                <img src="{% static 'red-3.jpg' %}" alt="gao red" style="max-width: 60%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{% static 'lion.jpg' %}" alt="gao lion" style="max-width: 60%;">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end_Red -->
+
+  <!-- Silver -->
+  <div class="modal fade" id="gaosilver" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gao Silver</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td style="width: 50%;" rowspan="2">
+                <img src="{% static 'silver-2.jpg' %}" alt="gao silver" style="max-width: 60%;">
+              </td>
+              <td style="width: 50%;">
+                <img src="{% static 'silver-3.jpg' %}" alt="gao silver" style="max-width: 60%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{% static 'wolf.jpg' %}" alt="gao wolf" style="max-width: 60%;">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end_silver -->
+
+  <!-- Yellow -->
+  <div class="modal fade" id="gaoyellow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gao Yellow</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td style="width: 50%;" rowspan="2">
+                <img src="{% static 'yellow-2.jpg' %}" alt="gao yellow" style="max-width: 60%;">
+              </td>
+              <td style="width: 50%;">
+                <img src="{% static 'yellow-3.jpg' %}" alt="gao silver" style="max-width: 60%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{% static 'egle.jpg' %}" alt="gao egle" style="max-width: 60%;">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end_Yellow -->
+
+  <!-- BLue -->
+  <div class="modal fade" id="gaoblue" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gao Blue</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td style="width: 50%;" rowspan="2">
+                <img src="{% static 'blue-2.jpg' %}" alt="gao blue" style="max-width: 60%;">
+              <td style="width: 50%;">
+                <img src="{% static 'blue-3.jpg' %}" alt="gao blue" style="max-width: 60%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{% static 'shark.jpg' %}" alt="gao shark" style="max-width: 60%;">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end_Blue -->
+
+  <!-- Black -->
+  <div class="modal fade" id="gaoblack" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Bao Black</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td style="width: 50%;" rowspan="2">
+                <img src="{% static 'black-2.jpg' %}" alt="gao black" style="max-width: 60%;">
+              <td style="width: 50%;">
+                <img src="{% static 'black-3.jpg' %}" alt="gao black" style="max-width: 60%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{% static 'bison.jpg' %}" alt="gao bison" style="max-width: 60%;">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end_Black -->
+
+  <!-- White -->
+  <div class="modal fade" id="gaowhite" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Gao White</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <td style="width: 50%;" rowspan="2">
+                <img src="{% static 'white-2.jpg' %}" alt="gao white" style="max-width: 60%;">
+              <td style="width: 50%;">
+                <img src="{% static 'white-3.jpg' %}" alt="gao white" style="max-width: 60%;">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="{% static 'tiger.jpg' %}" alt="gao tiger" style="max-width: 60%;">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end_white -->
+
+</body>

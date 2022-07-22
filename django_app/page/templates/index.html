@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chonpat</title>
+    {# Load the tag library #}
+    {% load bootstrap5 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+    <style class={{ var }}>
+        table,
+        td,
+        th {
+            border: 1px solid black;
+            border-collapse: collapse;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">The Secret</li>
+        </ol>
+      </nav>
+
+    {% if session == 0 %}
+    <center>
+        <p>
+        <h2>Become my member to see... </h2>
+        <h1>The Secret!!!</h1>
+        </p>
+        <form action="login/" method="POST">
+            {% csrf_token %}
+            <input type="text" name="username" required>
+            <input type="password" name="password" required>
+            <input type="submit" value="Login">
+            <!-- <a href="forget/">Forget password</a> in progress -->
+            <a href="register/">Register</a>
+            <a href="/">back</a>
+
+        </form>
+    </center>
+
+    {% elif session == 1 %}
+
+    {% for x in display %}
+    Welcome {{ x.username }}
+    <a href="logout/">Logout</a>
+    <center>
+        <h1>THE SECRET :)</h1> <br>
+        <table style="width: 80%; text-align: center;">
+            <h3>There are my members</h3>
+            <br><br>
+            <tr>
+                <th>Name</th>
+                <th>LastName</th>
+            </tr>
+            {% for d in data %}
+            <tr>
+                <td>{{d.Name}}</td>
+                <td>{{d.Lastname}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        {% endfor %}
+        <h4>Thank You for your cooperation</h4>
+        {% endif %}
+
+
+
+    </center>
+
+    <!--{% if session == 3 %}
+    E-mail sent
+    <a href="">back</a>
+    {% endif %} in progress -->
+
+
+</body>
+
+</html>
